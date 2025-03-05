@@ -1,0 +1,94 @@
+.card {
+    width: 18rem;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    background-color: #1e1e1e;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 123, 255, 0.7);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border: 2px solid #007bff;
+        border-radius: 10px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      
+      &:hover::before {
+        opacity: 1;
+      }
+      & .img-top {
+        position: relative;
+        width: 34px;
+        height: 34px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        top: 7%;
+        left: 43%;
+        @media( min-width:#breaks[tablet]){
+          top: 30px;
+          left: 110px;
+        }
+      }
+      & .img-abili {
+        position: relative;
+        width: 34px;
+        height: 34px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        top: 5%;
+        left: 54%;
+        @media( min-width:#breaks[tablet]){
+          top: 20px;
+          left: 125px;
+        }
+        
+      }
+      & .card-body {
+        padding: 15px;
+        color: #ffffff;
+      }
+      
+      & .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #ffffff;
+       
+      }
+      
+      & .card-text {
+        font-size: 1rem;
+        margin: 10px 0;
+      }
+      & .list-contact {
+        display: flex;
+        background-color: darkgray; 
+        color: black; 
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      & .list-contact:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+      }
+      & .img-contact {
+        width: 32px;
+        height: 32px;
+        margin: 5px 0;
+        transition: transform 0.3s ease;
+        padding: 1px;
+      }
+    @media (min-width:#breaks[tablet]) {
+        width: 90%;
+    }
+  }
+ 

@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .estudios,
+.habilidades,
+.proyectos,
+.contactame {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+main {
+@media (min-width:#breaks[tablet]) {
+      display: flex;
+      flex-direction: column;
+    }
+}
+.cards{
+    @media (min-width:#breaks[tablet]) {
+        display: flex;
+        flex-direction: row;
+      }
+}
+.proyectos{
+  @media (min-width:#breaks[tablet]) {
+ height: 35vh;
+  }
+  @media (min-width:#breaks[desktop]) {
+    & .card{
+      & .card-title{
+        position: relative;
+        top:35px;
+      }
+      & .card-body{
+        position: relative;
+        top:35px;
+      }
+    }
+     }
+}

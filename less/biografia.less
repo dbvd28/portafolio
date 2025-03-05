@@ -1,0 +1,141 @@
+.biografia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 0;
+  & #imagen_bio {
+    position: relative;
+    align-items: center;
+    align-content: center center;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  & #imagen_bio:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  }
+  & #bio_photo {
+    position: relative;
+    width: 100%; /* Set desired width */
+    height: 50vh; /* Set desired height */
+    border-radius: 50%;
+    top: 10px;
+    z-index: 1; /* Ensure the image is above the card */
+    transition: transform 0.3s; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
+    overflow: hidden; /* Ensures no overflow */
+  }
+  & #bio_photo:hover {
+    transform: translateY(-10px); /* Move the image up on hover */
+  }
+  & .text_photo {
+    position: relative;
+    top: 15px;
+    padding: 15px;
+    color: #333;
+  }
+  & .name_photo {
+    font-size: 12px;
+  }
+  & .text_bio {
+    --offset: 3px;
+    background: rgb(39, 38, 38);
+    border-radius: 10px;
+    position: relative;
+    height: 50vh;
+    width: 400px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  & .text_bio::before {
+    content: "";
+    background: conic-gradient(transparent 270deg, white, transparent);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+    width: 100%;
+    animation: rotate 2s linear infinite;
+  }
+  & .text_bio::after {
+    content: "";
+    background: inherit;
+    border-radius: inherit;
+    position: absolute;
+    inset: var(--offset);
+    height: calc(100% - 2 * var(--offset));
+    width: calc(100% - 2 * var(--offset));
+  }
+  & .quick_facts {
+    list-style: none;
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    padding: 1.5rem;
+  }
+  & .quick_facts li {
+    position: relative; /* Required for custom bullet */
+    padding: 10px 20px; /* Add padding for spacing */
+    margin: 10px 0; /* Space between list items */
+    background-color: #333;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+  }
+  & .quick_facts li:hover {
+    background-color: #f9f9f9;
+    color: #1e1e1e;
+    transform: translateY(-2px); /* Lift effect on hover */
+  }
+  & .quick_facts li::before {
+    content: "✓"; /* Custom bullet point */
+    position: absolute;
+    left: 10px; /* Positioning of the bullet */
+    color: #007bff; /* Color of the bullet */
+    font-size: 1.2em; /* Size of the bullet */
+  }
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+    }
+
+    to {
+      transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
+    }
+  }
+  @media (min-width: #breaks[tablet]) {
+    width: 100%;
+    flex-direction: row;
+
+    & #bio_photo {
+      height: 38vh;
+    }
+    & #imagen_bio {
+      width: 35%;
+      border: 1px solid white;
+      position: relative;
+      right: 28px;
+    }
+    & .text_bio {
+      width: 57%;
+      height: 52vh;
+    }
+  }
+  @media (min-width: #breaks[desktop]) {
+    & #bio_photo {
+      width: 75%;
+    }
+  }
+ 
+}
