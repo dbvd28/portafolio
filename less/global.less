@@ -22,11 +22,19 @@ main {
         flex-direction: row;
       }
 }
+.estudios{
+  @media (min-width:#breaks[desktop]) {
+    height: 60vh;
+     }
+}
 .proyectos{
   @media (min-width:#breaks[tablet]) {
  height: 35vh;
+ flex-shrink: 1;
   }
   @media (min-width:#breaks[desktop]) {
+    height: 25vh;
+    flex-shrink: 1;
     & .card{
       & .card-title{
         position: relative;
